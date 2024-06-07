@@ -69,7 +69,7 @@ namespace HotelListing.API.Data
                     Id = 3,
                     Name = "Comfort Suites",
                     Address = "George Town",
-                    CountryId = 4,
+                    CountryId = 3,
                     Rating = 4.3
                 },
                 new Hotel
@@ -77,7 +77,7 @@ namespace HotelListing.API.Data
                     Id = 4,
                     Name = "Grand Palldium",
                     Address = "Nassua",
-                    CountryId = 3,
+                    CountryId = 4,
                     Rating = 4
                 } // this can also go on....
             );
