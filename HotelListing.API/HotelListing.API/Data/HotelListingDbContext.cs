@@ -1,5 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
+using System.Globalization;
+using System.Text.Json.Nodes;
 
 namespace HotelListing.API.Data
 {
@@ -43,7 +45,7 @@ namespace HotelListing.API.Data
                     Id = 4,
                     Name = "Cayman Island",
                     ShortName = "CI"
-                } // this can go on....
+                }
             );
 
             modelBuilder.Entity<Hotel>().HasData
@@ -69,7 +71,7 @@ namespace HotelListing.API.Data
                     Id = 3,
                     Name = "Comfort Suites",
                     Address = "George Town",
-                    CountryId = 3,
+                    CountryId = 4,
                     Rating = 4.3
                 },
                 new Hotel
@@ -77,9 +79,9 @@ namespace HotelListing.API.Data
                     Id = 4,
                     Name = "Grand Palldium",
                     Address = "Nassua",
-                    CountryId = 4,
+                    CountryId = 3,
                     Rating = 4
-                } // this can also go on....
+                }
             );
         }
     }
