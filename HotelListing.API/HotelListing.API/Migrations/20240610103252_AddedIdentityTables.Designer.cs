@@ -4,6 +4,7 @@ using HotelListing.API.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HotelListing.API.Migrations
 {
     [DbContext(typeof(HotelListingDbContext))]
-    partial class HotelListingDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240610103252_AddedIdentityTables")]
+    partial class AddedIdentityTables
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -135,12 +138,6 @@ namespace HotelListing.API.Migrations
                             Id = 4,
                             Name = "Cayman Island",
                             ShortName = "CI"
-                        },
-                        new
-                        {
-                            Id = 5,
-                            Name = "Japan",
-                            ShortName = "JP"
                         });
                 });
 
@@ -202,14 +199,6 @@ namespace HotelListing.API.Migrations
                             CountryId = 3,
                             Name = "Grand Palldium",
                             Rating = 4.0
-                        },
-                        new
-                        {
-                            Id = 5,
-                            Address = "Chiyoda City",
-                            CountryId = 5,
-                            Name = "Aman Tokyo",
-                            Rating = 4.5
                         });
                 });
 
@@ -238,20 +227,6 @@ namespace HotelListing.API.Migrations
                         .HasFilter("[NormalizedName] IS NOT NULL");
 
                     b.ToTable("AspNetRoles", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = "e9eb8511-b93d-45f7-8b98-59e82aca33ec",
-                            Name = "Administrator",
-                            NormalizedName = "ADMINISTRATOR"
-                        },
-                        new
-                        {
-                            Id = "951c6aeb-97ca-470c-9901-85c1c2bc5c48",
-                            Name = "User",
-                            NormalizedName = "USER"
-                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
